@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy picture of the day</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <section>
+        <p th:text="${data.getTitle()}"></p>
+
+        <img id="image" th:src="${data.getHdurl()}" alt="Astronomy picture">
+
+        <p th:text="${data.getExplanation()}"></p>
+
+        <p th:text="${data.getDate()}"></p>
+
+        <p th:text="${data.getCopyright()}"></p>
+
+    </section>
+</body>
+
+</html>
