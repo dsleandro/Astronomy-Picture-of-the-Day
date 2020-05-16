@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Picture {
 
     String title;
-    String hdurl;
+    String url;
     String explanation;
     String date;
     String copyright;
@@ -22,12 +22,12 @@ public class Picture {
         this.title = title;
     }
 
-    public String getHdurl() {
-        return hdurl;
+    public String geturl() {
+        return url;
     }
 
-    public void setHdurl(String hdurl) {
-        this.hdurl = hdurl;
+    public void seturl(String url) {
+        this.url = url;
     }
 
     public String getExplanation() {
@@ -56,8 +56,8 @@ public class Picture {
 
     @Override
     public String toString() {
-        return "Picture [title=" + title +", date=" + date + ", explanation=" + explanation + ", hdurl="
-                + hdurl + ", copyright=" + copyright + "]";
+        return "Picture [title=" + title +", date=" + date + ", explanation=" + explanation + ", url="
+                + url + ", copyright=" + copyright + "]";
     }
 
 }
