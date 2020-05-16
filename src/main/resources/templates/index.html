@@ -10,17 +10,20 @@
 
 <body>
     <section>
-        <p th:text="${data.getTitle()}"></p>
-
-        <img id="image" th:src="${data.getHdurl()}" alt="Astronomy picture">
-
-        <p th:text="${data.getExplanation()}"></p>
-
-        <p th:text="${data.getDate()}"></p>
-
-        <p th:text="${data.getCopyright()}"></p>
-
+        <h1 id="title" th:text="${data.getTitle()}"></h1>
+        <figure>
+            <img id="image" th:src="${data.geturl()}" alt="Astronomy picture">
+            <figcaption id="figcaption">
+                <span class="imageInfo">Date: <time th:text="${data.getDate()}"></time></span>
+                <span class="imageInfo">Image Credit & Copyright: <cite th:text="${data.getCopyright()}"></cite></span>
+            </figcaption>
+        </figure>
+        <p id="explanation" th:text="${data.getExplanation()}"></p>
     </section>
+    <footer>
+        <p id="pageInfo">Page created with the open API <a href="https://api.nasa.gov/">APOD</a> provided by <a
+                href="https://apod.nasa.gov">NASA</a></p>
+    </footer>
 </body>
 
 </html>

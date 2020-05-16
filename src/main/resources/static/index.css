@@ -1,5 +1,37 @@
-#image{
-    width:90%;
-    margin: 0 auto;   
+#title{
+    font-size: x-large;
+    text-align: center;
 }
 
+#image{
+    display: block;
+    max-height: 100vh;
+    margin: 0 auto;
+}
+
+#explanation{
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+}
+
+#figcaption{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.imageInfo{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+cite{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#pageInfo{
+    margin: 30px auto;
+    text-align: center;
+}
