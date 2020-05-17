@@ -6,11 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astronomy picture of the day</title>
     <link rel="stylesheet" href="index.css">
+
+    <script>
+        //get date in YYYY-MM-DD format
+        function getDate() {
+            var date = new Date(),
+                year = date.getFullYear(),
+                month = '' + (date.getMonth() + 1),
+                day = '' + date.getDate();
+
+            if (month.length < 2)
+                month = '0' + month;
+            if (day.length < 2)
+                day = '0' + day;
+
+            return [year, month, day].join('-');
+        }
+        //It wait for the DOM to load and then set max attribute
+        document.addEventListener("DOMContentLoaded", function (event) {
+            document.getElementById("datePicker").setAttribute("max", getDate());
+        });
+    </script>
 </head>
 
 <body>
+    <header>
+        <h1>Astronomy picture of the day</h1>
+        <h3>Here you will find every day new info about our fascinating universe</h3>
+    </header>
+
     <section>
-        <h1 id="title" th:text="${data.getTitle()}"></h1>
+        <div id="dateContainer">
+            <h4>If you missed any, pick a date here:</h4>
+            <form action="/" method="GET">
+                <input type="date" th:value="${data.getDate()}" min="2018-01-01" name="date" id="datePicker">
+                <button id="submit" type="submit">Send</button>
+            </form>
+        </div>
+
+        <h2 id="title" th:text="${data.getTitle()}"></h2>
         <figure>
             <img id="image" th:src="${data.geturl()}" alt="Astronomy picture">
             <figcaption id="figcaption">
