@@ -11,10 +11,15 @@ h1,h2, h3{
     text-align: center;
 }
 
+figure{
+    margin: 0 auto;
+}
+
 #image{
     display: block;
-    max-height: 100vh;
     margin: 0 auto;
+    max-height: 100vh;
+    max-width: 95vw;
 }
 
 #explanation{
