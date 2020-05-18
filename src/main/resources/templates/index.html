@@ -39,7 +39,7 @@
         <div id="dateContainer">
             <h4>If you missed any, pick a date here:</h4>
             <form action="/" method="GET">
-                <input type="date" th:value="${data.getDate()}" min="2018-01-01" name="date" id="datePicker">
+                <input type="date" th:value="${data.getDate()}" min="1995-06-16" name="date" id="datePicker" required>
                 <button id="submit" type="submit">Send</button>
             </form>
         </div>
