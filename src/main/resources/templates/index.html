@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astronomy picture of the day</title>
-    <link rel="stylesheet" href="index.css">
+    <link type="text/css" rel="Stylesheet" href="index.css"/>
 
     <script>
         //get date in YYYY-MM-DD format
@@ -45,13 +45,24 @@
         </div>
 
         <h2 id="title" th:text="${data.getTitle()}"></h2>
-        <figure>
-            <img id="image" th:src="${data.geturl()}" alt="Astronomy picture">
+
+        <figure th:if="${data.getMedia_type() == 'image'}">
+            <img id="image" th:src="${data.getUrl()}" alt="Astronomy picture">
             <figcaption id="figcaption">
                 <span class="imageInfo">Date: <time th:text="${data.getDate()}"></time></span>
-                <span class="imageInfo">Image Credit & Copyright: <cite th:text="${data.getCopyright()}"></cite></span>
+                <span th:if="${data.getCopyright()}" class="imageInfo">Image Credit & Copyright: <cite th:text="${data.getCopyright()}"></cite></span>
             </figcaption>
         </figure>
+
+        <div id="videoContainer" th:unless="${data.getMedia_type() == 'image'}">
+            <iframe id="video" th:src="${data.getUrl()}">
+            </iframe>
+            <div id="figcaption">
+                <span class="imageInfo">Date: <time th:text="${data.getDate()}"></time></span>
+                <span th:if="${data.getCopyright()}" class="imageInfo">Image Credit & Copyright: <cite th:text="${data.getCopyright()}"></cite></span>
+            </div>
+        </div>
+
         <p id="explanation" th:text="${data.getExplanation()}"></p>
     </section>
     <footer>

@@ -10,6 +10,7 @@ public class Picture {
     String explanation;
     String date;
     String copyright;
+    String media_type;
 
     public Picture(){
     }
@@ -22,11 +23,11 @@ public class Picture {
         this.title = title;
     }
 
-    public String geturl() {
+    public String getUrl() {
         return url;
     }
 
-    public void seturl(String url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 
@@ -52,6 +53,14 @@ public class Picture {
 
     public void setCopyright(String copyright) {
         this.copyright = copyright;
+    }
+
+    public String getMedia_type() {
+        return media_type;
+    }
+
+    public void setMedia_type(String media_type) {
+        this.media_type = media_type;
     }
 
     @Override
