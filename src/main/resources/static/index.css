@@ -83,6 +83,7 @@ input[type="date"], focus {
     padding: 9px 15px;
     background-color: rgb(0, 132, 255);
     font-family: "Helvetica", arial, sans-serif;
+    cursor: pointer;
 }
 
 #dateContainer{
